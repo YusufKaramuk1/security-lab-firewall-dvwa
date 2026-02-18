@@ -1,86 +1,100 @@
-# security-lab-firewall-dvwa
-Firewall vs No-Firewall web exploitation lab using Kali Linux, DVWA and pfSense. Includes vulnerability discovery, exploitation and network security testing.
+# 🛡️ Firewall vs No-Firewall Attack Lab (DVWA)
 
---------------------------------------------
+This project simulates a real-world attack scenario against a vulnerable web server.  
+The goal is to observe how exploitation behaves **without a firewall** and how the same attack changes when a firewall is enabled.
 
-Firewall vs No-Firewall Web Exploitation Lab
-Overview
+The lab is fully isolated and built locally using virtual machines.
 
-This project simulates a real-world attack scenario against a vulnerable web server.
-The goal is to observe how exploitation behaves without a firewall and how the same attack changes when a firewall is enabled.
+---
 
-The lab is fully isolated and built using virtual machines on a local environment.
+## 📝 Objectives
 
-Lab Topology
+- Perform network reconnaissance  
+- Identify open ports and services  
+- Discover vulnerabilities on a web server  
+- Test exploitation paths  
+- Observe the impact of firewall rules  
+- Compare attacker visibility with and without firewall protection  
 
-Kali Linux → Attacker machine
+---
 
-Ubuntu Server (DVWA) → Target web server
+## 🖥️ Lab Topology
 
-pfSense → Firewall
+| Machine     | Role          | IP Address         |
+| ----------- | ------------- | ------------------ |
+| Kali Linux  | Attacker      | 192.168.1.50       |
+| Ubuntu DVWA | Target Server | 192.168.1.11       |
+| pfSense     | Firewall      | Enabled in Phase 2 |
 
-Internal Network:
+Network: Internal Network (LAB)
+---
 
-Kali: 192.168.1.50  
-DVWA: 192.168.1.11  
-pfSense: enabled in phase 2
+## 🛠️ Tools Used
 
-Tools Used
+- Nmap  
+- Nuclei  
+- Netcat  
+- DVWA  
+- pfSense  
+- VirtualBox  
 
-Nmap
+---
 
-Nuclei
+## 🔍 Phase 1 — Firewall Disabled
 
-Netcat
+- Network discovery  
+- Port scanning  
+- Service enumeration  
+- Vulnerability scanning  
+- Default credential discovery  
+- Initial exploitation testing  
 
-DVWA
+Result: Target fully reachable from attacker machine.
 
-pfSense
+---
 
-VirtualBox
+## 🧱 Phase 2 — Firewall Enabled
 
-Scenario
-Phase 1 — Firewall Disabled
+- pfSense placed between attacker and target  
+- Firewall rules configured  
+- Same scans repeated  
+- Access differences observed  
+- Exploitation behavior compared  
 
-Network reconnaissance
+Result: Reduced attack surface and restricted access.
 
-Vulnerability scanning
+---
 
-Default credential discovery
+## 📊 Key Findings
 
-Web exploitation
+- Open ports discovered (22, 80)  
+- Directory listing enabled  
+- Missing security headers  
+- Default credentials detected  
+- Multiple web vulnerabilities identified  
+- Firewall rules significantly changed attack results  
 
-Reverse shell access
+---
 
-Phase 2 — Firewall Enabled
+## 📁 Repository Structure
 
-Firewall rules configured
+security-lab-firewall-dvwa/
+│
+├── README.md
+├── topology/
+├── screenshots/
+└── notes/
 
-Same exploitation attempts repeated
+---
 
-Traffic filtering and logs analyzed
 
-Impact of firewall observed
+Screenshots and logs will be added as the lab progresses.
 
-Key Objectives
+---
 
-Understand network attack surface
+## ⚠️ Disclaimer
 
-Perform web exploitation in a controlled lab
+This lab is created for educational purposes only.  
+All testing is performed on isolated virtual machines in a local environment.
 
-Observe firewall behavior against attacks
 
-Compare access with and without filtering
-
-Document findings like a real penetration test
-
-Results (Work in Progress)
-
-This lab demonstrates how a system that is fully exploitable without a firewall can behave differently once network filtering is introduced.
-
-Screenshots and technical notes will be added during testing.
-
-Disclaimer
-
-This lab is created for educational purposes only.
-All testing is performed in a controlled local environment on systems owned by the author.
