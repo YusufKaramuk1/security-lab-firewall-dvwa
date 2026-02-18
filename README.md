@@ -88,14 +88,16 @@ security-lab-firewall-dvwa/
 
 ---
 
-
-Screenshots and logs will be added as the lab progresses.
-
----
-
 ## ⚠️ Disclaimer
 
 This lab is created for educational purposes only.  
 All testing is performed on isolated virtual machines in a local environment.
+
+
+
+
+
+
+
 
 
