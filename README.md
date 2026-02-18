@@ -78,12 +78,13 @@ Result: Reduced attack surface and restricted access.
 
 ## 📁 Repository Structure
 
+```text
 security-lab-firewall-dvwa/
-│
 ├── README.md
 ├── topology/
 ├── screenshots/
 └── notes/
+
 
 ---
 
